@@ -1,3 +1,4 @@
+//代码入口文件
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import routes from './router/router'

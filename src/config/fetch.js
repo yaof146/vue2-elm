@@ -17,7 +17,7 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 			url = url + '?' + dataStr;
 		}
 	}
-
+	console.log('fetchInfo:', url, type, method);
 	if (window.fetch && method == 'fetch') {
 		let requestConfig = {
 			credentials: 'include',
@@ -38,7 +38,10 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
 		
 		try {
 			const response = await fetch(url, requestConfig);
-			const responseJson = await response.json();
+			const responseJson = await response.json();//responseJson里面有数据
+			if (url.includes('/v2/index_entry')) {
+				debugger;
+			}
 			return responseJson
 		} catch (error) {
 			throw new Error(error)

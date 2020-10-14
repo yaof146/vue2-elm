@@ -1,3 +1,4 @@
+<!--页面入口文件-->
 <template>
 	<div>
 		<transition name="router-fade" mode="out-in">
